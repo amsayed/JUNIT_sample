@@ -90,6 +90,7 @@ public class AccountServiceTest {
 	public void ifAmountPassedToWithdrawIsNegativeThenItShouldThrowException() throws InvalidAccountException, InsufficientBalanceException{
 		service.withdraw(3, -8765);
 	}
+	
 
 	@Test(expected=com.cg.demo.exceptions.InsufficientBalanceException.class)
 
