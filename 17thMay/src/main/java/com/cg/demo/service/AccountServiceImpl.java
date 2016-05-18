@@ -56,6 +56,13 @@ public class AccountServiceImpl implements AccountService {
 	public Account deposit(int number, float amount)
 			throws InvalidAccountException {
 		// TODO Auto-generated method stub
+		Account a = repo.findByNumber(number);
+//		if(amount < 1){
+//			throw new IllegalArgumentException();
+//		}
+		if(a==null){
+			throw new InvalidAccountException();
+		}
 		return null;
 	}
 

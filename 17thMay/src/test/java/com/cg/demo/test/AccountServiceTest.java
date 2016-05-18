@@ -129,6 +129,23 @@ public class AccountServiceTest {
 	// Account should be valid
 	// amount should not be greater than zero
 	// After deposit balance should be increased.
+	
+	@Test(expected = com.cg.demo.exceptions.InvalidAccountException.class)
+	public void ifAccountPassedIsNotValidForDepositThenThrowException() throws InvalidAccountException{
+		when(repo.findByNumber(4)).thenReturn(null);
+
+		service.deposit(4,1000);
+	}
+	
+	/*@Test
+	public void amountShouldBeGreaterThanZeroForDeposit() throws InvalidAccountException{
+		Account a = new Account(5);
+		a.setBalance(4000);
+		when(repo.findByNumber(5)).thenReturn(a);
+		service.deposit(4,0);
+	}*/
+	
+	
 
 
 
